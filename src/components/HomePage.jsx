@@ -1,31 +1,58 @@
 import React, { useState, useEffect } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import Mark from "mark.js";
 
 const Menu = (props) => {
-  const [showSubMenu, setShowSubMenu] = useState(false);
+  const [showSubMenu, setShowSubMenu] = useState(true);
+
+  // Highlight matching text in search
+  const highlightText = (text, searchTerm) => {
+    if (!searchTerm) return text;
+    const regex = new RegExp(`(${searchTerm})`, "gi");
+    return text.split(regex).map((part, index) =>
+      part.toLowerCase() === searchTerm.toLowerCase() ? (
+        <span
+          key={index}
+          style={{ backgroundColor: "yellow", fontWeight: "bold" }}
+        >
+          {part}
+        </span>
+      ) : (
+        part
+      )
+    );
+  };
 
   return (
     <div>
+      {/* Render the menu item, and highlight the name */}
       <div
         onClick={() => setShowSubMenu(!showSubMenu)}
         style={{ cursor: "pointer" }}
       >
-        <Link to={props.path}>{props.name}</Link>
+        <Link to={props.path || "#"}>
+          {highlightText(props.name, props.searchTerm)}
+        </Link>
       </div>
-      <div
-        style={{
-          display: showSubMenu ? "flex" : "none",
-          flexDirection: "column",
-          marginLeft: "25px",
-        }}
-      >
-        {props.subtopics &&
-          props.subtopics.map((subtopic, index) => (
-            <Menu key={index} {...subtopic} />
+
+      {/* Check if the current item has subtopics */}
+      {props.subtopics && showSubMenu && (
+        <div
+          style={{
+            display: showSubMenu ? "flex" : "none",
+            flexDirection: "column",
+            marginLeft: "25px",
+          }}
+        >
+          {/* Recursively render the subtopics with highlighted names */}
+          {props.subtopics.map((subtopic, index) => (
+            <Menu key={index} {...subtopic} searchTerm={props.searchTerm} />
           ))}
-      </div>
+        </div>
+      )}
     </div>
   );
 };
@@ -83,7 +110,7 @@ const HomePage = () => {
                 { name: "• Lead FLOW-CHART", path: "/LeadFlowChart" },
                 { name: "• Activity Creation", path: "/ActivityCreation" },
                 {
-                  name: "•Activity Management ▼",
+                  name: "• Activity Management ▼",
                   subtopics: [
                     { name: " Viewing Activity History", path: "/ActivityHistory" },
                     { name: " Performing Actions on Lead-Linked", path: "/LeadLinkedActivities" },
@@ -130,12 +157,22 @@ const HomePage = () => {
 
   const [selectedMenu, setSelectedMenu] = useState(null); // Keeps track of which menu is selected
   const [isContentEmpty, setIsContentEmpty] = useState(true); // Flag to show prompt message
+  const [searchTextContentArea, setSearchTextContentArea] = useState(""); // For content search
+  const navigate = useNavigate(); // React Router's hook for navigation
+
+  const contentRef = React.useRef(); // Reference to content area
+  const obj = new Mark(contentRef.current); // Mark.js instance
 
   // To set content when a menu is clicked
   const onClickSubmenu = (submenu) => {
-    setTopics(submenu.topics || []); // Set the submenu topics
-    setFilteredTopics(submenu.topics || []); // Set the filtered topics based on search
-    setIsContentEmpty(false); // Hide the prompt when a topic is selected
+    setTopics(submenu.topics || []);
+    setFilteredTopics(submenu.topics || []);
+    setIsContentEmpty(false);
+
+    // Navigate to the first topic in the submenu if exists
+    if (submenu.topics && submenu.topics[0]?.path) {
+      navigate(submenu.topics[0].path);
+    }
   };
 
   useEffect(() => {
@@ -168,6 +205,23 @@ const HomePage = () => {
 
     const filtered = filterTopics(topics, term);
     setFilteredTopics(filtered);
+
+    // If no valid result is found, set content to be empty
+    if (filtered.length === 0) {
+      setIsContentEmpty(true); // Show prompt message for no results
+    } else {
+      // Automatically set content to the first match
+      if (filtered.length > 0 && filtered[0]?.path) {
+        navigate(filtered[0].path); // Navigate to the matched topic path
+        setIsContentEmpty(false); // Hide the prompt message
+      } else if (filtered.length > 0 && filtered[0]?.subtopics) {
+        const firstSubtopic = filtered[0].subtopics[0];
+        if (firstSubtopic?.path) {
+          navigate(firstSubtopic.path);
+          setIsContentEmpty(false);
+        }
+      }
+    }
   };
 
   const onClickMenu = (val, i) => {
@@ -182,6 +236,16 @@ const HomePage = () => {
       })
     );
   };
+
+  // Update highlights when search term changes
+  useEffect(() => {
+    if (contentRef.current) {
+      obj.unmark();
+      if (searchTextContentArea) {
+        obj.mark(searchTextContentArea, { className: "highlight" });
+      }
+    }
+  }, [searchTextContentArea]);
 
   return (
     <div>
@@ -222,7 +286,7 @@ const HomePage = () => {
                   paddingLeft: "0px",
                   top: "130%",
                   backgroundColor: "white",
-                  color:"black",
+                  color: "black",
                 }}
               >
                 {val.subMenus.map((submenu, index) => (
@@ -254,7 +318,7 @@ const HomePage = () => {
                 }}
               >
                 {(searchTerm ? filteredTopics : topics).map((topic, index) => (
-                  <Menu key={index} {...topic} />
+                  <Menu key={index} {...topic} searchTerm={searchTerm} />
                 ))}
               </div>
             </ul>
@@ -262,14 +326,26 @@ const HomePage = () => {
         </nav>
         <main>
           <div className="content-area">
-           
-            <div id="content-area">
+            <div id="content-area" ref={contentRef}>
+              <input
+                type="text"
+                id="search-bar-2"
+                className="search-bar-2"
+                placeholder="Search within content..."
+            onkeyup="searchContent()"
+            value={searchTextContentArea}
+            onChange={(e)=>setSearchTextContentArea(e.target.value)}
+          />
+             
+       
               {isContentEmpty ? (
                 <div className="prompt-message">
-                  Please select a topic from the sidebar.
+                  Select any topic from the sidebar
                 </div>
               ) : (
+                <div id = "area-search">
                 <Outlet />
+                </div>
               )}
             </div>
           </div>
