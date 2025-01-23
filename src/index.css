@@ -4,65 +4,454 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color:black(255, 255, 255, 0.87);
+  background-color:white;
+
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/* Sidebar container */
+#sidebar {
+  width: 350px;
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-right: 1px solid #f8f9fa;
+  height: 90vh;
+  overflow-y: auto;
+}
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+/* Sidebar options */
+#sidebar-options {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  position:fixed;
 }
-a:hover {
-  color: #535bf2;
+
+/* Sidebar links */
+#sidebar-options a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  padding: 3px 13px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
 }
+
+/* Sidebar links hover effect */
+#sidebar-options a:hover {
+  background-color: #007bff;
+  color: #fff;
+ 
+}
+
+/* Submenu container */
+.submenu {
+  padding-left: 20px;
+}
+
+/* Submenu links */
+.submenu a {
+  font-size: 0.9em;
+}
+
+/* Toggle button for submenu */
+.menu > div {
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Toggle button hover effect */
+.menu > div:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Active submenu */
+.open {
+  display: block;
+}
+
+.close {
+  display: none;
+}
+/* Body Styling */
 
 body {
+  font-family: Arial, sans-serif;
   margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar Styling */
+
+.navbar {
+  background-color: #5d8fc3;
+  color: white;
+  padding: 60px 20px;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #5d8fc3;
+  padding: 10px 30px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.navbar .logo {
+  font-size: 2.5rem; /* Larger font for emphasis */
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif; /* Stylish and modern font */
+  color: transparent; /* Initially transparent for gradient */
+  text-transform: uppercase; /* Brand consistency */
+  letter-spacing: 2px; /* Enhanced spacing for a sleek look */
+  background: linear-gradient(
+    90deg,
+    #b73a3a,
+    #cc6a1a,
+    #3b82d1
+  ); /* Animated gradient */
+  background-size: 200%; /* Make the gradient longer for animation */
+  -webkit-background-clip: text; /* Use gradient as the text's color */
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  position: relative;
+  transition: all 0.4s ease-in-out; /* Smooth hover transition */
+  animation: gradientAnimation 4s infinite alternate; /* Infinite gradient animation */
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.navbar .logo::before {
+  content: ""; /* Create a glowing effect container */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(255, 92, 92, 0.3), transparent);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  filter: blur(25px);
+  z-index: -1; /* Place it behind the text */
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.navbar .logo:hover {
+  background: linear-gradient(
+    90deg,
+    #4facfe,
+    #43e97b,
+    #f9f047
+  ); /* New gradient on hover */
+  background-size: 300%; /* Expand gradient for dynamic animation */
+  transform: scale(1.15) rotate(2deg); /* Interactive scaling and slight rotation */
+}
+
+.navbar .logo:hover::before {
+  opacity: 1; /* Glow effect becomes visible on hover */
+  transform: translate(-50%, -50%) scale(1.2); /* Slightly grow the glow on hover */
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Navbar ul-li Styling */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  margin-top: 50px;
+  margin-right: 50px;
+  align-items: center;
+}
+
+.navbar ul li {
+  margin-left: 10px;
+  margin-right: 15px;
+  position: relative;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+  padding: 2px 2px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar ul li a:hover {
+  color: black;
+}
+
+.navbar ul li a::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar ul li a:hover::before {
+  width: 100%;
+}
+
+.navbar ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+
+  transition: width 0.4s ease, left 0.4s ease;
+}
+
+.navbar ul li a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Search-bar Styling */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  padding: 5px 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  padding: 5px;
+  width: 200px;
+  border-radius: 20px;
+}
+
+.search-bar button {
+  border: none;
+  background-color: #ffd700; /* Gold background */
+  color: #333; /* Dark text color for contrast */
+  padding: 8px 16px; /* Larger padding for better clickability */
+  border-radius: 25px; /* More rounded edges for a smooth look */
+  cursor: pointer; /* Pointer cursor to indicate it's clickable */
+  font-size: 1rem; /* Clearer font size for better readability */
+  margin-left: 8px; /* More spacing between button and input */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow effect for depth */
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; /* Smooth transition effects */
+  display: inline-flex;
+  align-items: center; /* Aligns button contents */
+  justify-content: center;
+}
+
+.search-bar button:hover {
+  background-color: #e0c200; /* Darker gold on hover for interaction feedback */
+  transform: scale(1.05); /* Slightly increases size on hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.search-bar button:active {
+  transform: scale(1); /* Scale back to normal size when clicked */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow on click */
+}
+
+.search-bar button i {
+  font-size: 1.2rem; /* Slightly increased icon size for better visibility */
+  transition: transform 0.2s ease; /* Smooth transition for icon */
+}
+
+.search-bar button:hover i {
+  transform: rotate(20deg); /* Adds a slight rotation effect when hovered */
+}
+
+.search-bar:focus {
+  border: 2px solid #007bff;
+  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3);
+  background-color: #eef7ff;
+}
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.search-bar input {
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 50px;
+  width: 240px;
+  transition: all 0.3s ease-out;
+  background-color: #f0f0f0;
+}
+
+.search-bar input:focus {
+  outline: none;
+  width: 270px;
+  background-color: #e7e7e7;
+}
+
+.search-icon {
+  background-color: #007bff; /* Blue background */
+  padding: 12px; /* Slightly increased padding */
+  border-radius: 50%; /* Circular shape */
+  color: white; /* White icon color */
+  font-size: 18px; /* Slightly larger icon */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Align icon in the center */
+}
+
+.search-icon:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.1); /* Slight scale increase on hover */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.search-icon:active {
+  transform: scale(1); /* Scale back to original on click */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow on click */
+}
+
+
+.search-icon i {
+  font-size: 18px;
+}
+
+.container {
+  display: flex;
+  margin: 20px;
+}
+
+/* Nav Styling */
+nav {
+  width: 25%;
+  background: #f1f1f1;
+  padding: 15px;
+  border-right: 1px solid #ccc;
+  overflow-y: auto;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.search-bar-2 {
+  width: 300px; /* Shortened width */
+  padding: 10px 35px 10px 15px; /* Adjust padding for icon and input */
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-family: "Arial", sans-serif;
+  color: #333;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  outline: none;
+  transition: all 0.3s ease;
+  margin-left: 350px;
+  margin-bottom: 15px;
+}
+
+.search-bar-2::placeholder {
+  color: #fff;
+  opacity: 0.7;
+}
+
+.search-bar-2:focus {
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 15px rgba(37, 117, 252, 0.8);
+}
+
+.search-bar-2:focus::placeholder {
+  opacity: 0.5;
+}
+
+.submenu {
+  padding: 10px;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  position: relative;
+  overflow: hidden; /* Prevents the effect from overflowing */
+  transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.submenu::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: rgba(255, 255, 255, 0.1); /* Light effect */
+  transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
 }
+
+.submenu:hover {
+  color: black; /* Change text color */
+  background-color: #5d8fc3; /* Dark gray background */
+  transform: scale(1.05); /* Slightly enlarges the item */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adds shadow */
+}
+
+.submenu:hover::before {
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 50%;
+}
+#content-area {
+  padding: 20px;
+  background-color: #f9f9f9;
+  margin-left: 20px;
+  border-radius: 5px;
+}
+
+
+
+
+
+

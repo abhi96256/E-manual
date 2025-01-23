@@ -1,5 +1,5 @@
 import React from 'react';
-import  pic from "../../assets/Post/Service Request FLOW CHART.png"
+import  pic from "../../assets/Post/Service Request FLOW CHART.jpg"
 
 const RequestFlowChart = () => {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import  pic from "../../assets/Pre/Overdue Activity Repor.png"
+import  pic from "../../assets/Pre/Overdue Activity Report.png"
 import  pic1 from "../../assets/Pre/Detailed Breakdown.png"
 
 
