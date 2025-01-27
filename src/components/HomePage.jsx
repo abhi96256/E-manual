@@ -210,18 +210,43 @@ const HomePage = () => {
     if (filtered.length === 0) {
       setIsContentEmpty(true); // Show prompt message for no results
     } else {
-      // Automatically set content to the first match
-      if (filtered.length > 0 && filtered[0]?.path) {
-        navigate(filtered[0].path); // Navigate to the matched topic path
+      // Find the first match with subtopics
+      const firstMatch = filtered[0];
+    
+      // If the first match has a path (top-level item), navigate to it
+      if (firstMatch?.path) {
+        navigate(firstMatch.path); // Navigate to the matched topic path
         setIsContentEmpty(false); // Hide the prompt message
-      } else if (filtered.length > 0 && filtered[0]?.subtopics) {
-        const firstSubtopic = filtered[0].subtopics[0];
-        if (firstSubtopic?.path) {
-          navigate(firstSubtopic.path);
-          setIsContentEmpty(false);
+      } 
+      // Otherwise, if the first match has subtopics, check for subtopics that have paths
+      else if (firstMatch?.subtopics) {
+        let subtopicFound = false;
+        
+        // Loop through the subtopics to find one with a path (e.g., in the "Functional Requirement" submenu)
+        for (const subtopic of firstMatch.subtopics) {
+          if (subtopic?.path) {
+            navigate(subtopic.path); // Navigate to the subtopic's path
+            setIsContentEmpty(false); // Hide the prompt message
+            subtopicFound = true;
+            break; // Exit the loop once the path is found
+          } else if (subtopic?.subtopics) {
+            // If this subtopic has further subtopics, loop through them as well
+            for (const nestedSubtopic of subtopic.subtopics) {
+              if (nestedSubtopic?.path) {
+                navigate(nestedSubtopic.path); // Navigate to the nested subtopic's path
+                setIsContentEmpty(false); // Hide the prompt message
+                subtopicFound = true;
+                break; // Exit the loop once the path is found
+              }
+            }
+          }
+          
+          // If a subtopic path is found, break out of the outer loop
+          if (subtopicFound) break;
         }
       }
     }
+    
   };
 
   const onClickMenu = (val, i) => {
@@ -332,19 +357,14 @@ const HomePage = () => {
                 id="search-bar-2"
                 className="search-bar-2"
                 placeholder="Search within content..."
-            onkeyup="searchContent()"
-            value={searchTextContentArea}
-            onChange={(e)=>setSearchTextContentArea(e.target.value)}
-          />
-             
-       
+                value={searchTextContentArea}
+                onChange={(e) => setSearchTextContentArea(e.target.value)}
+              />
               {isContentEmpty ? (
-                <div className="prompt-message">
-                  Select any topic from the sidebar
-                </div>
+                <div className="prompt-message">Select any topic from the sidebar</div>
               ) : (
-                <div id = "area-search">
-                <Outlet />
+                <div id="area-search">
+                  <Outlet />
                 </div>
               )}
             </div>
