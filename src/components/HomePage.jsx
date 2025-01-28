@@ -94,6 +94,36 @@ const HomePage = () => {
       ],
     },
     {
+      name: "IMM ▼",
+      isOpen: false,
+      subMenus: [
+        {
+          name: "Gate-Entry",
+          topics: [
+            { name: "⦿ Introduction & Executive Summary", path: "/Intro3" },
+            { name: "⦿ Scope of the Document", path: "/Scope3" },
+            {
+              name: "⦿ Functional Requirements ▼",
+              subtopics: [
+                { name: "• Check-In Functional Requirements", path: "/CheckIn " },
+                { name: "• Check-Out Functional Requirements", path: "/CheckOut" },
+                { name: "• Pass Printing Functional Requirements", path: "/Pass" },
+              ],
+            },
+            {
+              name: "⦿ View-Based Functional Overview ▼",
+              subtopics: [
+                { name: "• Board View", path: "/BoardView" },
+                { name: "• List View", path: "/ListView" },
+                { name: "• Dashboard View", path: "/Dashboard" },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    
+    {
       name: "CRM ▼",
       isOpen: false,
       subMenus: [
@@ -154,7 +184,6 @@ const HomePage = () => {
       ],
     },
   ]);
-
   const [selectedMenu, setSelectedMenu] = useState(null); // Keeps track of which menu is selected
   const [isContentEmpty, setIsContentEmpty] = useState(true); // Flag to show prompt message
   const [searchTextContentArea, setSearchTextContentArea] = useState(""); // For content search
@@ -212,16 +241,16 @@ const HomePage = () => {
     } else {
       // Find the first match with subtopics
       const firstMatch = filtered[0];
-    
+
       // If the first match has a path (top-level item), navigate to it
       if (firstMatch?.path) {
         navigate(firstMatch.path); // Navigate to the matched topic path
         setIsContentEmpty(false); // Hide the prompt message
-      } 
+      }
       // Otherwise, if the first match has subtopics, check for subtopics that have paths
       else if (firstMatch?.subtopics) {
         let subtopicFound = false;
-        
+
         // Loop through the subtopics to find one with a path (e.g., in the "Functional Requirement" submenu)
         for (const subtopic of firstMatch.subtopics) {
           if (subtopic?.path) {
@@ -240,13 +269,13 @@ const HomePage = () => {
               }
             }
           }
-          
+
           // If a subtopic path is found, break out of the outer loop
           if (subtopicFound) break;
         }
       }
     }
-    
+
   };
 
   const onClickMenu = (val, i) => {

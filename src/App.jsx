@@ -46,6 +46,18 @@ import LocationTracking1 from "./components/PostSales/LocationTracking1";
 import NonFunctional1 from "./components/PostSales/NonFunctional1";
 import DependenciesPost from "./components/PostSales/DependenciesPost";
 import TestingValidationPost from "./components/PostSales/TestingValidationPost";
+// for IMM components
+import Intro3 from "./components/GateEntry/Intro3";
+import Scope3 from "./components/GateEntry/Scope3";
+
+import CheckIn from "./components/GateEntry/CheckIn";
+import CheckOut from "./components/GateEntry/CheckOut";
+import Pass from "./components/GateEntry/Pass";
+import BoardView from "./components/GateEntry/BoardView";
+import ListView from "./components/GateEntry/ListView";
+import Dashboard from "./components/GateEntry/Dashboard";
+
+
 
 
 import './App.css';
@@ -101,7 +113,18 @@ function App() {
           <Route path="/NonFunctional1" element={<NonFunctional1 />} />
           <Route path="/DependenciesPost" element={<DependenciesPost />} />
           <Route path="/TestingValidationPost" element={<TestingValidationPost />} />
-         
+
+             {/* IMM Routes */}
+          <Route path="/Intro3" element={<Intro3 />} />
+          <Route path="/Scope3" element={<Scope3 />} />
+        
+          <Route path="/CheckIn" element={<CheckIn />} />
+          <Route path="/CheckOut" element={<CheckOut />} />
+          <Route path="/Pass" element={<Pass />} />
+          <Route path="/BoardView" element={<BoardView />} />
+          <Route path="/ListView" element={<ListView />} />
+          <Route path="/Dashboard" element={<Dashboard />} />
+       
          </Route>
                 </Routes>
     </BrowserRouter>
