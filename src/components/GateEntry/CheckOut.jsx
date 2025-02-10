@@ -5,17 +5,19 @@ import DocumentInformation from "../../assets/Gate/Document Information.jpg"
 import ItemInformation from "../../assets/Gate/Item Information.jpg"
 import Checkout from "../../assets/Gate/Checkout.jpg"
 
+const headingStyle = { color: "#444",  fontWeight: "bold" };
+
 
 // Define the component
 const CheckOutProcess = () => {
   return (
     <div>
-      <h2>Check-Out Process</h2>
+      <h2 style={headingStyle}>Check-Out Process:</h2>
       <p>
-        • <strong>Input:</strong> User retrieves data for a visitor or vehicle previously Checked-In.
+        • <strong style={headingStyle}></strong> User retrieves data for a visitor or vehicle previously Checked-In.
       </p>
       <p>
-        • <strong>Action:</strong>
+        • <strong style={headingStyle}>Action:</strong>
       </p>
       <ul>
         <li>
@@ -38,7 +40,7 @@ const CheckOutProcess = () => {
       <p>User can add or update additional fields during Check-Out, such as:</p>
       <ul>
         <li>
-          <strong>Document Information (for vehicles):</strong>Document Date,Document No.,Number of Packets and Weight (Empty/Loaded)
+          <strong style={headingStyle}>Document Information (for vehicles):</strong>Document Date,Document No.,Number of Packets and Weight (Empty/Loaded)
           
         </li>
         <img 
@@ -47,7 +49,7 @@ const CheckOutProcess = () => {
               style={{ width: '850px', marginRight: '10px', marginLeft: '30px' }} 
             />
         <li>
-          <strong>Item Information (for visitors):</strong>Name, Serial Number, Quantity, and Remarks
+          <strong style={headingStyle}>Item Information (for visitors):</strong>Name, Serial Number, Quantity, and Remarks
           
         </li>
       </ul>
@@ -59,18 +61,18 @@ const CheckOutProcess = () => {
 
  
 
-<h3>UI Elements:</h3>
+<h3 style={headingStyle}>UI Elements:</h3>
       <ul>
        
         <li>
-        <h3>Visitor Check-Out Form</h3>
+        <h3 style={headingStyle}>Visitor Check-Out Form</h3>
         <ul>
-         <li><strong>Item information:</strong></li> 
+         <li style={headingStyle}><strong>Item information:</strong></li> 
           <ul>
-            <li><strong>Item Name: </strong>Input field for item description.</li>
-            <li><strong>Serial No.:</strong> Optional input for item serial number</li>
-            <li><strong>Quantity: </strong>Input field for item quantity</li>
-            <li><strong>Remarks:</strong> Text input for comments</li>
+            <li><strong style={headingStyle}>Item Name: </strong> field for item description.</li>
+            <li><strong style={headingStyle}>Serial No.:</strong> Optional input for item serial number</li>
+            <li><strong style={headingStyle}>Quantity: </strong> field for item quantity</li>
+            <li><strong style={headingStyle}>Remarks:</strong> Text input for comments</li>
             
             </ul>
           </ul>
@@ -79,14 +81,14 @@ const CheckOutProcess = () => {
         <ul>
        
         <li>
-        <h3>Vehicle Check-Out Form:</h3>
+        <h3 style={headingStyle}>Vehicle Check-Out Form:</h3>
         <ul>
-         <li><strong>Vehicle Information:</strong></li> 
+         <li><strong style={headingStyle}>Vehicle Information:</strong></li> 
           <ul>
-            <li><strong>Vehicle Type:</strong> Pre-filled entity.</li>
-            <li><strong>Vehicle Number:</strong> Pre-filled and non-editable field</li>
-            <li><strong>Driver Name:</strong> Pre-filled and non-editable text field. </li>
-            <li><strong>License Number:</strong> Pre-filled and non-editable field. </li>
+            <li><strong style={headingStyle}>Vehicle Type:</strong> Pre-filled entity.</li>
+            <li><strong style={headingStyle}>Vehicle Number:</strong> Pre-filled and non-editable field</li>
+            <li><strong style={headingStyle}>Driver Name:</strong> Pre-filled and non-editable text field. </li>
+            <li><strong style={headingStyle}>License Number:</strong> Pre-filled and non-editable field. </li>
             <li><strong>Employee Name:</strong> Pre-filled dropdown field.  </li>
             <li><strong>Department:</strong> Pre-filled department field.  </li>
             <li><strong>Supplier: </strong>Pre-filled entity </li>
@@ -102,7 +104,7 @@ const CheckOutProcess = () => {
           <ul>
             <li><strong>Document:</strong> Dropdown for document type.</li>
             <li><strong>Document Date:</strong> Date picker.</li>
-            <li><strong>Document No.: </strong>Input for document number.</li>
+            <li><strong>Document No.: </strong> for document number.</li>
             <li><strong>No. of Packets:</strong> Dropdown and text input for packet details.</li>
             <li><strong> (E/L):</strong> Input fields for empty and loaded weights.</li>
           </ul>

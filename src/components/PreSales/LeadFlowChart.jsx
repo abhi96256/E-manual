@@ -1,11 +1,12 @@
 import React from 'react';
 import  pic from "../../assets/Pre/Lead FLOW-CHART.png"
+const headingStyle = { color: "#444",  fontWeight: "bold" };
 
 
 const LeadFlowChart = () => {
   return (
     <section id="leadFlowChart">
-      <h2>Lead FLOW-CHART:</h2>
+      <h2 style={headingStyle}>Lead FLOW-CHART:</h2>
       <p>
         This flowchart outlines the lifecycle of managing leads in a CRM system, starting from adding a new lead to updating its status based on progression. Initially, users search for the contact number to see if the lead already exists. If found, they select the existing contact; if not, they add it as a new contact. From there, users access the Lead Form to fill in or update lead details.
       </p>
@@ -24,7 +25,7 @@ const LeadFlowChart = () => {
         The Lead Management system’s UI is designed for efficient handling of leads, featuring intuitive filters and action buttons to streamline lead management and tracking. The Lead Addition process first verifies the existence of a contact by mobile number; if the contact exists, a lead can be added, otherwise, the system prompts to save the contact first. This ensures that all relevant information is captured efficiently, maximizing productivity and accuracy in the sales process.
       </p>
 
-      <h3>Conclusion</h3>
+      <h3 style={headingStyle}>Conclusion</h3>
       <p>
         The Lead Management system’s UI is designed for efficient handling of leads, featuring intuitive filters and action buttons to streamline lead management and tracking. The Lead Addition process first verifies the existence of a contact by mobile number; if the contact exists, a lead can be added, otherwise, the system prompts to save the contact first. This ensures that all relevant information is captured efficiently, maximizing productivity and accuracy in the sales process.
       </p>

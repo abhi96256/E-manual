@@ -1,11 +1,12 @@
 import React from 'react';
 import  pic from "../../assets/Post/Service Contract FLOW CHART.png"
+const headingStyle = { color: "#444",  fontWeight: "bold" };
 
 
 const ContractFlowChart = () => {
   return (
     <div>
-      <h2>Service Contract FLOW CHART:</h2>
+      <h2 style={headingStyle}>Service Contract FLOW CHART:</h2>
       <img 
         src={pic}
         alt="Service Contract FLOW CHART" 

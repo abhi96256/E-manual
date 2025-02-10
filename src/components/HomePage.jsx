@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import Mark from "mark.js";
 
+
 const Menu = (props) => {
   const [showSubMenu, setShowSubMenu] = useState(true);
 
@@ -74,25 +75,28 @@ const HomePage = () => {
             {
               name: "⦿ Functional Requirement ▼",
               subtopics: [
-                { name: "• Zvolv Pulling", path: "/ZvolvPulling" },
-                { name: "• Lease Creation", path: "/LeaseCreation" },
+                { name: "➞ Zvolv Pulling", path: "/ZvolvPulling" },
+                { name: "➞ Lease Creation", path: "/LeaseCreation" },
                 {
-                  name: "• Lease Management ▼",
+                  name: "➞ Lease Management ▼",
                   subtopics: [
-                    { name: " Lease Listing", path: "/LeaseListing" },
-                    { name: " Lease Details", path: "/LeaseDetails" },
+                    { name: "➥Lease Listing", path: "/LeaseListing" },
+                    { name: "➥Lease Details", path: "/LeaseDetails" },
                   ],
                 },
-                { name: "• Payee Management", path: "/PayeeManagement" },
-                { name: "• Lease Monitoring", path: "/LeaseMonitoring" },
+                { name: "➞ Payee Management", path: "/PayeeManagement" },
+                { name: "➞ Lease Monitoring", path: "/LeaseMonitoring" },
               ],
             },
             { name: "⦿ Dependencies", path: "/Dependencies" },
             { name: "⦿ Testing Validation", path: "/TestingValidation" },
+           
+        
           ],
         },
       ],
     },
+    
     {
       name: "IMM ▼",
       isOpen: false,
@@ -105,17 +109,17 @@ const HomePage = () => {
             {
               name: "⦿ Functional Requirements ▼",
               subtopics: [
-                { name: "• Check-In Functional Requirements", path: "/CheckIn " },
-                { name: "• Check-Out Functional Requirements", path: "/CheckOut" },
-                { name: "• Pass Printing Functional Requirements", path: "/Pass" },
+                { name: "➞ Check-In Functional Requirements", path: "/CheckIn " },
+                { name: "➞ Check-Out Functional Requirement", path: "/CheckOut" },
+                { name: "➞ Printing Functional Requirements", path: "/Pass" },
               ],
             },
             {
               name: "⦿ View-Based Functional Overview ▼",
               subtopics: [
-                { name: "• Board View", path: "/BoardView" },
-                { name: "• List View", path: "/ListView" },
-                { name: "• Dashboard View", path: "/Dashboard" },
+                { name: "➞ Board View", path: "/BoardView" },
+                { name: "➞ List View", path: "/ListView" },
+                { name: "➞ Dashboard View", path: "/Dashboard" },
               ],
             },
           ],
@@ -135,23 +139,24 @@ const HomePage = () => {
             {
               name: "⦿ Functional Requirements ▼",
               subtopics: [
-                { name: "• Lead Creation", path: "/LeadCreation" },
-                { name: "• Lead Management", path: "/LeadManagement" },
-                { name: "• Lead FLOW-CHART", path: "/LeadFlowChart" },
-                { name: "• Activity Creation", path: "/ActivityCreation" },
+                { name: "➞ Lead Creation", path: "/LeadCreation" },
+                { name: "➞ Lead Management", path: "/LeadManagement" },
+                { name: "➞ Lead FLOW-CHART", path: "/LeadFlowChart" },
+                { name: "➞ Activity Creation", path: "/ActivityCreation" },
                 {
-                  name: "• Activity Management ▼",
+                  name: "➞ Activity Management ▼",
                   subtopics: [
-                    { name: " Viewing Activity History", path: "/ActivityHistory" },
-                    { name: " Performing Actions on Lead-Linked", path: "/LeadLinkedActivities" },
-                    { name: " Overdue Activity Report", path: "/OverdueActivityReport" },
+                    { name: "➥Viewing Activity History", path: "/ActivityHistory" },
+                    { name: "➥Performing Actions on Lead-Linked", path: "/LeadLinkedActivities" },
+                    { name: "➥Overdue Activity Report", path: "/OverdueActivityReport" },
                   ],
                 },
-                { name: "• Activity FLOW-CHART", path: "/ActivityFlowChart" },
-                { name: "• Mobile Access", path: "/MobileAccess" },
-                { name: "• Employee Location Tracking", path: "/LocationTracking" },
+                { name: "➞ Activity FLOW-CHART", path: "/ActivityFlowChart" },
+                { name: "➞ Mobile Access", path: "/MobileAccess" },
+                { name: "➞ Employee Location Tracking", path: "/LocationTracking" },
               ],
             },
+            
             { name: "⦿ Non-Functional Requirements", path: "/NonFunctional" },
             { name: "⦿ Dependencies", path: "/DependenciesPre" },
             { name: "⦿ Testing and Validation", path: "/TestingValidationPre" },
@@ -165,13 +170,13 @@ const HomePage = () => {
             {
               name: "⦿ Functional Requirements ▼",
               subtopics: [
-                { name: "• Service Ticket Creation", path: "/TicketCreation" },
-                { name: "• Service Request Management", path: "/ServiceManagement" },
-                { name: "• Service Ticket Detail", path: "/TicketDetail" },
-                { name: "• Service Request Flow-Chart", path: "/RequestFlowChart" },
-                { name: "• Service Contract Creation", path: "/ContractCreation" },
-                { name: "• Service Contract Management", path: "/ContractManagement" },
-                { name: "• Service Contract Flow-Chart", path: "/ContractFlowChart" },
+                { name: "➞ Service Ticket Creation", path: "/TicketCreation" },
+                { name: "➞ Service Request Management", path: "/ServiceManagement" },
+                { name: "➞ Service Ticket Detail", path: "/TicketDetail" },
+                { name: "➞ Service Request Flow-Chart", path: "/RequestFlowChart" },
+                { name: "➞ Service Contract Creation", path: "/ContractCreation" },
+                { name: "➞ Service Contract Management", path: "/ContractManagement" },
+                { name: "➞ Service Contract Flow-Chart", path: "/ContractFlowChart" },
               ],
             },
             { name: "⦿ Mobile Access", path: "/MobileAccess1" },
@@ -337,8 +342,8 @@ const HomePage = () => {
                   position: "absolute",
                   marginRight: "10px",
                   width: "max-content",
-                  paddingLeft: "0px",
-                  top: "130%",
+                  paddingLeft: "-10px",
+                  top: "63%",
                   backgroundColor: "white",
                   color: "black",
                 }}

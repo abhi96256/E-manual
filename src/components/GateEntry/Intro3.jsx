@@ -1,5 +1,7 @@
 import React from "react";
 import  pic from "../../assets/Gate/intro.jpg"
+const headingStyle = { color: "#444",  fontWeight: "bold" };
+
 
 const Intro = () => {
   return (
@@ -7,7 +9,7 @@ const Intro = () => {
     
 
         <section className="mb-6">
-          <h2 className="text-xl font-semibold mb-2">Introduction & Executive Summary</h2>
+          <h2  style={headingStyle}>Introduction & Executive Summary:</h2>
           <p>
             This document provides a comprehensive overview of the Gate Entry &
             Visitor Pass system implemented in the Inventory Movement and
@@ -28,46 +30,46 @@ const Intro = () => {
         </section>
 
         <section className="mb-6">
-          <h2 className="text-xl font-semibold mb-2">Key Objectives</h2>
+          <h2 style={headingStyle}>Key Objectives</h2>
           <ul className="list-disc pl-6 space-y-2">
             <li>
-              <strong>Visitor Management:</strong> Simplifies the registration
+              <strong style={headingStyle}>Visitor Management:</strong> Simplifies the registration
               process for visitors by capturing essential information, including
               linked employees and reasons for visits.
             </li>
             <li>
-              <strong>Vehicle Management:</strong> Supports the recording and
+              <strong style={headingStyle}>Vehicle Management:</strong> Supports the recording and
               monitoring of vehicles—whether empty or loaded—entering the
               premises, ensuring accurate tracking of vehicle weight and
               movements.
             </li>
             <li>
-              <strong>Standardize Entry and Exit Processes:</strong> Ensure
+              <strong style={headingStyle}>Standardize Entry and Exit Processes:</strong> Ensure
               accurate and efficient registration of visitors, vehicles, and
               inventory with precise tracking of entry and exit times.
             </li>
             <li>
-              <strong>Enhanced Security:</strong> Provides a clear and
+              <strong style={headingStyle}>Enhanced Security:</strong> Provides a clear and
               systematic approach to tracking visitor and vehicle entries and
               exits, enhancing on-site security and compliance.
             </li>
             <li>
-              <strong>User-Friendly Interface:</strong> Ensures easy access and
+              <strong style={headingStyle}>User-Friendly Interface:</strong> Ensures easy access and
               usability, allowing administrative teams to register and manage
               visitor or vehicle records effortlessly.
             </li>
             <li>
-              <strong>Integration with Employee Records:</strong> Links visitor
+              <strong style={headingStyle}>Integration with Employee Records:</strong> Links visitor
               entries to specific employees for accountability and traceability
               purposes.
             </li>
             <li>
-              <strong>Centralized Record-Keeping:</strong> Maintain unified
+              <strong style={headingStyle}>Centralized Record-Keeping:</strong> Maintain unified
               records of visitors, vehicles, and inventory for better
               reporting, analysis, and traceability.
             </li>
             <li>
-              <strong>Improved Resource Utilization:</strong> Optimize the flow
+              <strong style={headingStyle}>Improved Resource Utilization:</strong> Optimize the flow
               of visitors, vehicles, and inventory within the organizational
               premises, reducing manual intervention and minimizing bottlenecks.
             </li>
@@ -75,40 +77,40 @@ const Intro = () => {
         </section>
 
         <section className="mb-6">
-          <h2 className="text-xl font-semibold mb-2">Key Features</h2>
+          <h2  style={headingStyle}>Key Features</h2>
           <ul className="list-disc pl-6 space-y-2">
             <li>
-              <strong>Visitor Entry Registration:</strong> Quick and hassle-free
+              <strong style={headingStyle}>Visitor Entry Registration:</strong> Quick and hassle-free
               registration of visitors, capturing essential details such as
               name, contact number, organization, and reason for the visit.
             </li>
             <li>
-              <strong>Vehicle Entry and Inventory Management:</strong> Record
+              <strong style={headingStyle}>Vehicle Entry and Inventory Management:</strong> Record
               vehicle details, track inventory movements associated with
               vehicles, and capture vehicle weight at entry and exit points for
               reconciliation.
             </li>
             <li>
-              <strong>Gate Pass Generation:</strong> Generate secure gate
+              <strong style={headingStyle}>Gate Pass Generation:</strong> Generate secure gate
               passes for visitors, vehicles, and inventory in both digital and
               physical formats.
             </li>
             <li>
-              <strong>Real-Time In/Out Time Logging:</strong> Automatically
+              <strong style={headingStyle}>Real-Time In/Out Time Logging:</strong> Automatically
               record the entry and exit times of visitors, vehicles, and
               inventory.
             </li>
             <li>
-              <strong>Integrated Search and Filter Tools:</strong> Enable users
+              <strong style={headingStyle}>Integrated Search and Filter Tools:</strong> Enable users
               to search, sort, and filter records based on various criteria.
             </li>
             <li>
-              <strong>Inventory Movement Monitoring:</strong> Log and monitor
+              <strong style={headingStyle}>Inventory Movement Monitoring:</strong> Log and monitor
               inventory movements tied to vehicle entries, preventing
               unauthorized movement of inventory.
             </li>
             <li>
-              <strong>Centralized Dashboard and Reports:</strong> Provide a
+              <strong style={headingStyle}>Centralized Dashboard and Reports:</strong> Provide a
               unified dashboard to track visitor and vehicle movements and
               generate detailed reports.
             </li>
@@ -116,42 +118,43 @@ const Intro = () => {
         </section>
 
         <section className="mb-6">
-          <h2 className="text-xl font-semibold mb-2">Key Benefits</h2>
+          <h2  style={headingStyle}>Key Benefits</h2>
           <ul className="list-disc pl-6 space-y-2">
             <li>
-              <strong>Enhanced Security Measures:</strong> Robust tracking of
+              <strong style={headingStyle}>Enhanced Security Measures:</strong> Robust tracking of
               visitors, vehicles, and inventory ensures tighter security at
               entry/exit points.
             </li>
             <li>
-              <strong>Streamlined Inventory Movement:</strong> Simplifies the
+              <strong style={headingStyle}>Streamlined Inventory Movement:</strong> Simplifies the
               tracking of inventory and vehicle movement, minimizing errors.
             </li>
             <li>
-              <strong>Operational Efficiency:</strong> Reduces manual
+              <strong style={headingStyle}>Operational Efficiency:</strong> Reduces manual
               intervention and streamlines entry processes, saving time and
               resources.
             </li>
             <li>
-              <strong>Improved Accountability and Traceability:</strong> Clear
+              <strong style={headingStyle}>Improved Accountability and Traceability:</strong> Clear
               linkage between visitors, vehicles, inventory, and employees
               ensures accountability.
             </li>
             <li>
-              <strong>Data-Driven Decision Making:</strong> Real-time dashboards
+              <strong style={headingStyle}>Data-Driven Decision Making:</strong> Real-time dashboards
               and detailed reports provide actionable insights.
             </li>
             <li>
-              <strong>Scalable and User-Friendly:</strong> Supports growing
+              <strong style={headingStyle}>Scalable and User-Friendly:</strong> Supports growing
               organizational needs and offers an easy-to-use interface.
             </li>
           </ul>
         </section>
 
         <section className="mb-6">
-          <h2 className="text-xl font-semibold mb-2">Success Criteria</h2>
+          <h2  style={headingStyle}>Success Criteria</h2>
           <ol className="list-decimal pl-6 space-y-2">
-            <li>
+
+            <li >
               Improved Security Measures: Centralized and automated records
               ensure comprehensive monitoring of all visitors and vehicles.
             </li>
@@ -182,7 +185,7 @@ const Intro = () => {
             />
 
         <section className="mb-6">
-          <h2 className="text-xl font-semibold mb-2">Summary</h2>
+          <h2  style={headingStyle}>Summary</h2>
           <p>
             The Gate Entry & Visitor Pass module in the IMM system focuses on
             providing a streamlined, secure, and efficient solution for

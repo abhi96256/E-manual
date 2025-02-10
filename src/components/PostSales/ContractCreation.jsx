@@ -2,23 +2,24 @@ import React from 'react';
 import  pic from "../../assets/Post/Adding a New Contact  2.png"
 import  pic1 from "../../assets/Post/Adding a Service Contract.png"
 import  pic2 from "../../assets/Post/Machine Detail.png"
+const headingStyle = { color: "#444",  fontWeight: "bold" };
 
 
 
 const ContractCreation = () => {
   return (
     <div>
-      <h2>Service Contract Creation:</h2>
+      <h2 >Service Contract Creation:</h2>
       <p>
         This process involves checking if a contact already exists, followed by displaying the appropriate form for either adding a Service Contract or saving a new contact.
       </p>
 
-      <h3>Contact Search by Mobile Number:</h3>
+      <h3 style={headingStyle}>Contact Search by Mobile Number:</h3>
       <ul>
-        <li><strong>Input:</strong> The user inputs a mobile number into the search field.</li>
+        <li><strong style={headingStyle}>Input:</strong> The user inputs a mobile number into the search field.</li>
         <br />
         <li>
-          <strong>Action:</strong> The system will automatically search the database to check if the mobile number already exists.
+          <strong style={headingStyle}>Action:</strong> The system will automatically search the database to check if the mobile number already exists.
           <br />
           <ul>
             <li>If the mobile number is found in the database, the system will load the existing contact's information and display the "Add" form for service contract.</li>
@@ -28,7 +29,7 @@ const ContractCreation = () => {
         </li>
       </ul>
 
-      <h2>Adding a New Contact (If Mobile Number Not Found):</h2>
+      <h2 style={headingStyle}>Adding a New Contact (If Mobile Number Not Found):</h2>
       <img 
         src={pic}
         alt="Adding a New Contact  2" 
@@ -36,7 +37,7 @@ const ContractCreation = () => {
       />
       <br />
 
-      <h2>Adding a Service Contract:</h2>
+      <h2 style={headingStyle}>Adding a Service Contract:</h2>
       <img 
         src={pic1}
         alt="Adding a Service Contract" 
@@ -44,25 +45,25 @@ const ContractCreation = () => {
       />
       <br />
 
-      <h3>Purpose:</h3>
+      <h3 style={headingStyle}>Purpose:</h3>
       <p>
         The "Add" button is designed to allow users to create new service contracts efficiently within the system. It provides a user-friendly interface for selecting item details such as Item Master Name, Item Code, Make, and Brand, while offering a text field for users to input specific contract details. This feature streamlines the process of adding contracts by making essential information easily accessible through dropdown menus and ensuring that all relevant contract data is captured accurately.
       </p>
 
-      <h3>UI Elements:</h3>
+      <h3 style={headingStyle}>UI Elements:</h3>
       <ul>
-        <li><strong>Item Master Name:</strong> A dropdown menu to select the item name.</li>
+        <li><strong style={headingStyle}>Item Master Name:</strong> A dropdown menu to select the item name.</li>
         <br />
-        <li><strong>Item Code:</strong> A dropdown to specify the code of the item.</li>
+        <li><strong style={headingStyle}>Item Code:</strong> A dropdown to specify the code of the item.</li>
         <br />
-        <li><strong>Make:</strong> A dropdown menu to select the make name of the item.</li>
+        <li><strong style={headingStyle}>Make:</strong> A dropdown menu to select the make name of the item.</li>
         <br />
-        <li><strong>Brand:</strong> A dropdown menu to select the brand of the item.</li>
+        <li><strong style={headingStyle}>Brand:</strong> A dropdown menu to select the brand of the item.</li>
         <br />
-        <li><strong>Contract Details:</strong> A text field to enter details about the service contract for an item.</li>
+        <li><strong style={headingStyle}>Contract Details:</strong> A text field to enter details about the service contract for an item.</li>
       </ul>
 
-      <h3>Machine Detail:</h3>
+      <h3 style={headingStyle}>Machine Detail:</h3>
       <img 
         src={pic2}
         alt="Machine Detail" 
@@ -71,34 +72,34 @@ const ContractCreation = () => {
       <br />
 
       <ul>
-        <li><strong>Contract Type:</strong> A dropdown to select a contract type from ‘Warranty’ or ‘AMC’.</li>
+        <li><strong style={headingStyle}>Contract Type:</strong> A dropdown to select a contract type from ‘Warranty’ or ‘AMC’.</li>
         <br />
-        <li><strong>Invoice Availability (Radio Button):</strong> If invoice details are available, click on ‘Yes’; otherwise, click on ‘No’.</li>
+        <li><strong style={headingStyle}>Invoice Availability (Radio Button):</strong> If invoice details are available, click on ‘Yes’; otherwise, click on ‘No’.</li>
         <br />
-        <li><strong>Invoice Availability:</strong> If <strong>‘Yes’:</strong>
+        <li><strong style={headingStyle}>Invoice Availability:</strong> If <strong style={headingStyle}>‘Yes’:</strong>
           <ul>
-            <li><strong>Invoice No.:</strong> A text field to enter the invoice number of the machine.</li>
+            <li><strong style={headingStyle}>Invoice No.:</strong> A text field to enter the invoice number of the machine.</li>
             <br />
-            <li><strong>Invoice Date:</strong> Select the invoice date.</li>
+            <li><strong style={headingStyle}>Invoice Date:</strong> Select the invoice date.</li>
             <br />
-            <li><strong>MFD:</strong> Select the manufacturing date of the machine.</li>
+            <li><strong style={headingStyle}>MFD:</strong> Select the manufacturing date of the machine.</li>
             <br />
-            <li><strong>Serial No.:</strong> A text field to enter the serial number of the machine.</li>
+            <li><strong style={headingStyle}>Serial No.:</strong> A text field to enter the serial number of the machine.</li>
             <br />
-            <li><strong>Start Date:</strong> Select the start date for the service contract.</li>
+            <li><strong style={headingStyle}>Start Date:</strong> Select the start date for the service contract.</li>
             <br />
-            <li><strong>Finish Date:</strong> Select the end date for the service contract.</li>
+            <li><strong style={headingStyle}>Finish Date:</strong> Select the end date for the service contract.</li>
             <br />
-            <li><strong>Contract Amount:</strong> A text field to enter the amount for the service contract.</li>
+            <li><strong style={headingStyle}>Contract Amount:</strong> A text field to enter the amount for the service contract.</li>
             <br />
-            <li><strong>Dealer Name:</strong> A dropdown menu to select the dealer name.</li>
+            <li><strong style={headingStyle}>Dealer Name:</strong> A dropdown menu to select the dealer name.</li>
             <br />
-            <li><strong>Engineer:</strong> A dropdown menu to select the engineer name (address details will be auto-filled).</li>
+            <li><strong style={headingStyle}>Engineer:</strong> A dropdown menu to select the engineer name (address details will be auto-filled).</li>
           </ul>
         </li>
       </ul>
 
-      <h3>Success Criteria:</h3>
+      <h3 style={headingStyle}>Success Criteria:</h3>
       <p>
         The feature will be successful if users can easily input machine details, select contract types, and manage invoice information without errors. It should ensure accurate recording of contract dates, amounts, and allow smooth selection of dealers and engineers.
       </p>

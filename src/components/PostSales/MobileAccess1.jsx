@@ -5,24 +5,25 @@ import  pic2 from "../../assets/Post/Actions on Service Ticket(add item).png"
 import  pic3 from "../../assets/Post/Add document.png"
 import  pic4 from "../../assets/Post/Reply.png"
 import  pic5 from "../../assets/Post/Payment Collection-2.png"
+const headingStyle = { color: "#444",  fontWeight: "bold" };
 
 
 const MobileAccess = () => {
   return (
     <div>
-      <h2>Mobile Access:</h2>
+      <h2 style={headingStyle}>Mobile Access:</h2>
       <p>
         In addition to desktop access, users can manage service tickets directly through the mobile interface. This includes the ability to view tickets based on status, select a date range, add items, upload documents, and process payments. The mobile functionality ensures seamless service ticket management from anywhere, providing flexibility and improving responsiveness.
       </p>
 
       <section>
-        <h2>Ticket View</h2>
+        <h2 style={headingStyle}>Ticket View</h2>
         <p>Users can view the ticket based on date range, status, and categories.</p>
         <img src={pic} alt="Ticket View" style={{ width: '300px', marginRight: '10px', marginLeft: '30px' }} />
       </section>
 
       <section>
-        <h2>Add Item</h2>
+        <h2 style={headingStyle}>Add Item</h2>
         <p>Users can view ticket details and add items based on item name, billing type, quantity, with the price automatically calculated and reflected.</p>
         <img src={pic1} alt="Add Item" style={{ width: '300px', marginRight: '10px', marginLeft: '30px' }} />
         <p>
@@ -34,10 +35,10 @@ const MobileAccess = () => {
       </section>
 
       <section>
-        <h2>Actions on Service Ticket</h2>
+        <h2 style={headingStyle}>Actions on Service Ticket</h2>
         <ul>
           <li>
-            <strong>Add Item:</strong> Users can view ticket details and click on ‘+’ button. Add items based on item name, billing type, quantity, with the price automatically calculated and reflected.
+            <strong style={headingStyle}>Add Item:</strong> Users can view ticket details and click on ‘+’ button. Add items based on item name, billing type, quantity, with the price automatically calculated and reflected.
           </li>
         </ul>
         <img src={pic2} alt="Actions on Service Ticket(add item)" style={{ width: '300px', marginRight: '10px', marginLeft: '30px' }} />
@@ -53,7 +54,7 @@ const MobileAccess = () => {
       </section>
 
       <section>
-        <h2>Add Document</h2>
+        <h2 style={headingStyle}>Add Document</h2>
         <img src={pic3} alt="Add document" style={{ width: '300px', marginRight: '10px', marginLeft: '30px' }} />
         <p>Click on the image button in the top-right corner. From there, you can upload documents by selecting either the camera or gallery option.</p>
         <p>
@@ -65,7 +66,7 @@ const MobileAccess = () => {
       </section>
 
       <section>
-        <h2>Reply</h2>
+        <h2 style={headingStyle}>Reply</h2>
         <p>The engineer will click on the reply button and perform actions by selecting the appropriate ticket status. If the engineer has reached the client location, they can select the "Reached" status and specify the date and time. The agent can close the ticket once all services are completed.</p>
         <img src={pic4} alt="Reply" style={{ width: '300px', marginRight: '10px', marginLeft: '30px' }} />
         <p>
@@ -74,7 +75,7 @@ const MobileAccess = () => {
       </section>
 
       <section>
-        <h2>Payment Collection</h2>
+        <h2 style={headingStyle}>Payment Collection</h2>
         <ul>
           <li>Payment can be collected via multiple modes, including cash, UPI, cheque, or partially across these methods.</li>
         </ul>

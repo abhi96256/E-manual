@@ -1,9 +1,10 @@
 import React from 'react';
+const headingStyle = { color: "#444",  fontWeight: "bold" };
 
 const ZvolvPulling = () => {
   return (
     <div>
-      <h2>Zvolv data pulling:</h2>
+      <h2  style={headingStyle}>Zvolv data pulling:</h2>
 
       <p>
         FebiNext will develop and release an API to retrieve lease-related data

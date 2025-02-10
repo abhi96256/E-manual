@@ -1,15 +1,16 @@
 import React from 'react';
 import  pic from "../../assets/Pre/Activity FLOW-CHART.png"
+const headingStyle = { color: "#444",  fontWeight: "bold" };
 
 const ActivityFlowchart = () => {
   return (
     <section id="activity-flowchart">
-      <h2>Activity FLOW-CHART:</h2>
+      <h2 style={headingStyle}>Activity FLOW-CHART:</h2>
       <p>
         This flowchart presents an organized approach for managing activities
         within a CRM system. It begins with activity status categorization into{' '}
-        <strong>Start</strong>, <strong>Finished</strong>, <strong>Open</strong>, and{' '}
-        <strong>Close</strong> stages, each offering specific actions such as viewing
+        <strong style={headingStyle}>Start</strong>, <strong style={headingStyle}>Finished</strong>, <strong style={headingStyle}>Open</strong>, and{' '}
+        <strong style={headingStyle}>Close</strong> stages, each offering specific actions such as viewing
         history, rescheduling, transferring, following up, or closing the activity.
       </p>
       <img
@@ -28,7 +29,7 @@ const ActivityFlowchart = () => {
         activities, supporting efficient follow-up and task management.
       </p>
 
-      <h2>Conclusion</h2>
+      <h2 style={headingStyle}>Conclusion</h2>
       <p>
         The functionalities outlined in this document are designed to streamline lead
         management by offering users the ability to add new activities, list them, view

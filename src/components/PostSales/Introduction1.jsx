@@ -1,24 +1,25 @@
 import React from 'react';
+const headingStyle = { color: "#444",  fontWeight: "bold" };
 
 const Intro = () => {
   return (
     <div>
-      <h2>Introduction & Executive Summary:</h2>
+      <h2 style={headingStyle}>Introduction & Executive Summary:</h2>
       <p>
         This document serves as a comprehensive outline of the functional
         requirements for the Service & Contract Management System to be
-        implemented at <strong>3S Logics Pvt. Ltd.</strong> The primary objective
+        implemented at <strong style={headingStyle}>3S Logics Pvt. Ltd.</strong> The primary objective
         of this system is to enhance and streamline the processes of Service
         Ticket creation, management, and tracking status of tickets within the
-        organization. By leveraging this system, <strong>3S Logics</strong> aims
+        organization. By leveraging this system, <strong style={headingStyle}>3S Logics</strong> aims
         to ensure efficient service operations, improve customer relationship
         management (CRM), and ultimately drive higher sales performance.
       </p>
       <br />
-      <h3>Key Features of the Service Ticket & Service Contract Management System:</h3>
+      <h3 style={headingStyle}>Key Features of the Service Ticket & Service Contract Management System:</h3>
 
       <div className="benefit-section">
-        <h3 className="section-title">Service Ticket Creation:</h3>
+      <h3 style={headingStyle}>Service Ticket Creation:</h3>
         <p>
           Simplifies the process of creating new service tickets by verifying
           customer information and ensuring that all relevant details (e.g.,
@@ -28,7 +29,7 @@ const Intro = () => {
       </div>
 
       <div className="benefit-section">
-        <h3 className="section-title">Service Ticket Management:</h3>
+      <h3 style={headingStyle}>Service Ticket Management:</h3>
         <p>
           Enables filtering, updating, and reassigning of service tickets,
           allowing service teams to prioritize and focus on the most urgent or
@@ -38,7 +39,7 @@ const Intro = () => {
       </div>
 
       <div className="benefit-section">
-        <h3 className="section-title">Contract Creation & Management:</h3>
+      <h3 style={headingStyle}>Contract Creation & Management:</h3>
         <p>
           Allows users to create and manage service contracts associated with
           customers. Ensures that all contract details, including service levels,
@@ -47,7 +48,7 @@ const Intro = () => {
       </div>
 
       <div className="benefit-section">
-        <h3 className="section-title">Customer Payment Processing:</h3>
+      <h3 style={headingStyle}>Customer Payment Processing:</h3>
         <p>
           Facilitates secure and efficient payment collection by allowing
           customers to pay for services directly through the system. Supports
@@ -56,7 +57,7 @@ const Intro = () => {
       </div>
 
       <div className="benefit-section">
-        <h3 className="section-title">Mobile Access:</h3>
+      <h3 style={headingStyle}>Mobile Access:</h3>
         <p>
           Provides easy access to the system via mobile devices, enabling
           engineers and service teams to manage tickets, update service statuses,
@@ -65,7 +66,7 @@ const Intro = () => {
       </div>
 
       <div className="benefit-section">
-        <h3 className="section-title">Employee Location Tracking:</h3>
+      <h3 style={headingStyle}>Employee Location Tracking:</h3>
         <p>
           Enhances accountability by capturing the real-time locations of field
           engineers during service activities, ensuring they are attending to

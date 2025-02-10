@@ -1,26 +1,27 @@
 import React from 'react';
+const headingStyle = { color: "#444",  fontWeight: "bold" };
 
 const NonFunctional = () => {
   return (
     <div id="non-functional-requirements">
-      <h2>Non-Functional Requirements:</h2>
+      <h2 style={headingStyle}>Non-Functional Requirements:</h2>
 
-      <h3>Performance</h3>
+      <h3 style={headingStyle}>Performance</h3>
       <p>
         The system should handle a large volume of leads and activities without performance degradation.
       </p>
 
-      <h3>Usability</h3>
+      <h3 style={headingStyle}>Usability</h3>
       <p>
         The user interface should be intuitive, ensuring users can manage leads and activities with minimal training.
       </p>
 
-      <h3>Security</h3>
+      <h3 style={headingStyle}>Security</h3>
       <p>
         Data should be protected using industry-standard encryption, with access controls ensuring only authorized users can view or modify sensitive information.
       </p>
 
-      <h3>Success Criteria</h3>
+      <h3 style={headingStyle}>Success Criteria</h3>
       <p>Non-functional success will be determined by:</p>
       <ul>
         <li>

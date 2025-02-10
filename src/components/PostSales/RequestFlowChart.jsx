@@ -1,10 +1,11 @@
 import React from 'react';
 import  pic from "../../assets/Post/Service Request FLOW CHART.jpg"
+const headingStyle = { color: "#444",  fontWeight: "bold" };
 
 const RequestFlowChart = () => {
   return (
     <section id="service-request-flow-chart">
-      <h2>Service Request FLOW CHART:</h2>
+      <h2 style={headingStyle}>Service Request FLOW CHART:</h2>
       <img 
         src={pic}
         alt="Service Request FLOW CHART" 
@@ -34,7 +35,7 @@ const RequestFlowChart = () => {
       </p>
 
       <div className="section">
-        <h2>Conclusion</h2>
+        <h2 style={headingStyle}>Conclusion</h2>
         <p>
           The Service Request system’s UI is designed for efficient handling of
           tickets, featuring intuitive filters and action buttons to streamline

@@ -4,35 +4,99 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color:black(255, 255, 255, 0.87);
-  background-color:white;
-
+  color: black(255, 255, 255, 0.87);
+  background-color: white;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-/* Sidebar container */
-#sidebar {
-  width: 350px;
-  background-color: #f8f9fa;
-  padding: 15px;
-  border-right: 1px solid #f8f9fa;
-  height: 90vh;
-  overflow-y: auto;
+html,
+body {
+  overflow: hidden;
 }
 
-/* Sidebar options */
+/* Sidebar container */
+#sidebar {
+  font-family: "Roboto", sans-serif;
+  width: 26%;
+  background-color: white;
+  padding: 20px 5px;
+  border-right: 1px solid #e1e1e1; /* Slightly darker border for contrast */
+  overflow-y: auto; /* Enables vertical scrollbar when content exceeds height */
+  max-height: 90vh; /* Adjusts the max height of the scrollbar */
+  position: fixed; /* Keeps the sidebar fixed when scrolling */
+  left: 0;
+  z-index: 10;
+  height: 100%; /* Ensures sidebar height is 100% of the viewport */
+  margin-left: -30px;
+}
+
+/* Customizing the scrollbar appearance */
+#sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+#sidebar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+#sidebar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+#sidebar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 #sidebar-options {
+  font-family: "Roboto", sans-serif;
   list-style-type: none;
-  padding: 0;
+  padding: 60px;
   margin: 0;
-  position:fixed;
+  position: relative;
+  margin-top: 2vw; /* Adjusted margin */
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  gap: 15px; /* Adds more space between items */
+  height: 100%; /* Ensures the container inside the sidebar expands to full height */
+  margin-left: -30px;
+}
+
+#sidebar-options li {
+  padding: 12px 18px;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  height: 100%; /* Ensures each link takes up full height */
+}
+
+#sidebar-options li:hover {
+  background-color: #007bff; /* Blue on hover */
+  color: #fff;
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+#sidebar-options li:active {
+  background-color: #0056b3; /* Darker blue when clicked */
+}
+
+/* Content area */
+#content {
+  margin-left: 360px; /* Adjust margin for sidebar */
+  padding: 15px;
+  overflow-y: auto;
+  height: 90vh;
 }
 
 /* Sidebar links */
 #sidebar-options a {
+  font-family: "Roboto", sans-serif;
   text-decoration: none;
   color: #333;
   display: block;
@@ -45,21 +109,24 @@
 #sidebar-options a:hover {
   background-color: #007bff;
   color: #fff;
- 
 }
 
 /* Submenu container */
 .submenu {
+  font-family: "Roboto", sans-serif;
   padding-left: 20px;
 }
 
 /* Submenu links */
 .submenu a {
+  font-family: "Roboto", sans-serif;
   font-size: 0.9em;
 }
 
 /* Toggle button for submenu */
 .menu > div {
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 47px;
   cursor: pointer;
   padding: 10px 15px;
   border-radius: 4px;
@@ -83,7 +150,7 @@
 /* Body Styling */
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -97,9 +164,8 @@ html {
 /* Navbar Styling */
 
 .navbar {
-  background-color: #5d8fc3;
+  font-family: "Roboto", sans-serif;
   color: white;
-  padding: 60px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -110,9 +176,10 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #5d8fc3;
-  padding: 10px 30px;
+  background-image: linear-gradient(270deg, #4e83e9, #17cfa4);
+  padding: 0px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  height: 65px;
 }
 
 .navbar .logo {
@@ -153,22 +220,6 @@ html {
   opacity: 0;
 }
 
-.navbar .logo:hover {
-  background: linear-gradient(
-    90deg,
-    #4facfe,
-    #43e97b,
-    #f9f047
-  ); /* New gradient on hover */
-  background-size: 300%; /* Expand gradient for dynamic animation */
-  transform: scale(1.15) rotate(2deg); /* Interactive scaling and slight rotation */
-}
-
-.navbar .logo:hover::before {
-  opacity: 1; /* Glow effect becomes visible on hover */
-  transform: translate(-50%, -50%) scale(1.2); /* Slightly grow the glow on hover */
-}
-
 @keyframes gradientAnimation {
   0% {
     background-position: 0% 50%;
@@ -180,6 +231,7 @@ html {
 
 /* Navbar ul-li Styling */
 .navbar ul {
+  font-family: "Roboto", sans-serif;
   list-style: none;
   display: flex;
   margin: 0;
@@ -189,12 +241,14 @@ html {
 }
 
 .navbar ul li {
+  font-family: "Roboto", sans-serif;
   margin-left: 10px;
   margin-right: 15px;
   position: relative;
 }
 
 .navbar ul li a {
+  font-family: "Roboto", sans-serif;
   text-decoration: none;
   color: black;
   font-size: 1rem;
@@ -214,7 +268,6 @@ html {
   height: 2px;
   bottom: -3px;
   left: 0;
-
   transition: width 0.3s ease-in-out;
 }
 
@@ -229,7 +282,6 @@ html {
   left: 0;
   width: 0;
   height: 3px;
-
   transition: width 0.4s ease, left 0.4s ease;
 }
 
@@ -242,111 +294,69 @@ html {
 .search-bar {
   display: flex;
   align-items: center;
-  background-color: white;
-  border-radius: 20px;
-  padding: 5px 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 50vw;
+  margin: 0 auto;
+  padding: 2px;
+  background-color: #f1f1f1; /* Light background color */
+  border-radius: 90px; /* Rounded corners for a sleek look */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Adds subtle shadow for depth */
+  border: none;
+  height: 40px;
 }
 
-.search-bar input {
-  border: none;
-  outline: none;
-  padding: 5px;
-  width: 200px;
-  border-radius: 20px;
+/* Blue border when focused */
+.search-bar:focus-within {
+  border: 2px solid #4c84b2;
 }
 
 .search-bar button {
+  padding: 12px 15px;
+  margin-left: 10px;
+  color: #5d8fc3;
   border: none;
-  background-color: #ffd700; /* Gold background */
-  color: #333; /* Dark text color for contrast */
-  padding: 8px 16px; /* Larger padding for better clickability */
-  border-radius: 25px; /* More rounded edges for a smooth look */
-  cursor: pointer; /* Pointer cursor to indicate it's clickable */
-  font-size: 1rem; /* Clearer font size for better readability */
-  margin-left: 8px; /* More spacing between button and input */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow effect for depth */
-  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; /* Smooth transition effects */
-  display: inline-flex;
-  align-items: center; /* Aligns button contents */
-  justify-content: center;
-}
-
-.search-bar button:hover {
-  background-color: #e0c200; /* Darker gold on hover for interaction feedback */
-  transform: scale(1.05); /* Slightly increases size on hover */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
-}
-
-.search-bar button:active {
-  transform: scale(1); /* Scale back to normal size when clicked */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow on click */
-}
-
-.search-bar button i {
-  font-size: 1.2rem; /* Slightly increased icon size for better visibility */
-  transition: transform 0.2s ease; /* Smooth transition for icon */
-}
-
-.search-bar button:hover i {
-  transform: rotate(20deg); /* Adds a slight rotation effect when hovered */
-}
-
-.search-bar:focus {
-  border: 2px solid #007bff;
-  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3);
-  background-color: #eef7ff;
-}
-.search-bar {
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
+  position: relative;
+}
+
+.search-bar button::before {
+  content: "";
+  position: absolute;
+  top: -2px; /* Extend 2px above the button */
+  bottom: -2px; /* Extend 2px below the button */
+  left: -10px; /* Adjust as needed to align with the input */
+  width: 2px; /* Line width */
+  background-color: #5d8fc3; /* Color of the line */
 }
 
 .search-bar input {
-  padding: 12px;
-  font-size: 16px;
-  border: none;
-  border-radius: 50px;
-  width: 240px;
-  transition: all 0.3s ease-out;
-  background-color: #f0f0f0;
+  align-items: center;
+  width: 100%;
+  padding: 10px; /* Adjusted padding for better text placement */
+  background-color: #f4f4f4; /* Light background color */
+  border: none; /* Removes the border (box) */
+  border-radius: 20px; /* Optional: for rounded corners */
+  font-size: 16px; /* Set a good font size */
+  font-family: Arial, sans-serif; /* Use a clean, readable font */
+  color: #333; /* Dark gray text color for better contrast */
 }
 
 .search-bar input:focus {
-  outline: none;
-  width: 270px;
-  background-color: #e7e7e7;
+  outline: none; /* Removes the outline when input is focused */
 }
 
-.search-icon {
-  background-color: #007bff; /* Blue background */
-  padding: 12px; /* Slightly increased padding */
-  border-radius: 50%; /* Circular shape */
-  color: white; /* White icon color */
-  font-size: 18px; /* Slightly larger icon */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  display: flex;
-  justify-content: center;
-  align-items: center; /* Align icon in the center */
+.search-bar input::placeholder {
+  color: #aaa; /* Lighter color for placeholder text */
+  font-size: 16px; /* Match font size of the input text */
 }
 
-.search-icon:hover {
-  background-color: #0056b3; /* Darker blue on hover */
-  transform: scale(1.1); /* Slight scale increase on hover */
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
-}
-
-.search-icon:active {
-  transform: scale(1); /* Scale back to original on click */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow on click */
-}
-
-
-.search-icon i {
-  font-size: 18px;
+.search-bar button:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
 }
 
 .container {
@@ -356,46 +366,40 @@ html {
 
 /* Nav Styling */
 nav {
-  width: 25%;
-  background: #f1f1f1;
-  padding: 15px;
-  border-right: 1px solid #ccc;
-  overflow-y: auto;
-  height: 100vh;
-  position: sticky;
-  top: 0;
-  z-index: 900;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-right: 5%;
+  padding: 0px 15px;
+  width: 20%;
 }
 
 main {
+  font-family: "Roboto", sans-serif;
   flex: 1;
   padding: 20px;
-  background: #fff;
+  background: white;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
-
 .search-bar-2 {
-  width: 300px; /* Shortened width */
-  padding: 10px 35px 10px 15px; /* Adjust padding for icon and input */
-  border: none;
-  border-radius: 50px;
+  width: 300px;
+  padding: 10px 35px 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
   font-size: 16px;
   font-family: "Arial", sans-serif;
   color: #333;
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  background: rgb(234, 240, 245);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  position: relative;
   outline: none;
   transition: all 0.3s ease;
-  margin-left: 350px;
   margin-bottom: 15px;
+  margin-left: auto; /* Pushes it to the right */
+  display: block;
 }
 
 .search-bar-2::placeholder {
-  color: #fff;
+  color: rgb(64, 76, 83);
   opacity: 0.7;
 }
 
@@ -409,12 +413,12 @@ main {
 }
 
 .submenu {
+  font-family: "Roboto", sans-serif;
   padding: 10px;
   cursor: pointer;
   position: relative;
   overflow: hidden; /* Prevents the effect from overflowing */
   transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  
 }
 
 .submenu::before {
@@ -445,15 +449,11 @@ main {
 }
 #content-area {
   padding: 20px;
-  background-color: #f9f9f9;
-  margin-left: 20px;
+  background-color: white;
   border-radius: 5px;
+  overflow-y: scroll; /* Adds a vertical scrollbar */
+  height: 600px;
 }
 .highlight {
   background: yellow;
 }
-
-
-
-
-

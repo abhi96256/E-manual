@@ -1,13 +1,14 @@
 import React from 'react';
 import  pic from "../../assets/Pre/Overdue Activity Report.png"
 import  pic1 from "../../assets/Pre/Detailed Breakdown.png"
+const headingStyle = { color: "#444",  fontWeight: "bold" };
 
 
 
 const OverdueActivityReport = () => {
   return (
     <div id="overdue-activity-report">
-      <h2>Overdue Activity Report:</h2>
+      <h2 style={headingStyle}>Overdue Activity Report:</h2>
       <p>
         The Overdue Activity Report provides a comprehensive view of all OPEN activities assigned to various employees.
         This report is interactive, allowing users to drill down into detailed information about specific open activities
@@ -20,14 +21,14 @@ const OverdueActivityReport = () => {
       />
       <br />
       <section>
-        <h3>Purpose</h3>
+        <h3 style={headingStyle}>Purpose</h3>
         <p>
           The primary goal of this report is to offer a consolidated view of all overdue activities across different
           employees and activity types. This helps in quickly identifying bottlenecks, understanding workload
           distribution, and ensuring that no critical tasks are overlooked.
         </p>
 
-        <h3>Detailed Breakdown</h3>
+        <h3 style={headingStyle}>Detailed Breakdown</h3>
         <p>
           The report breaks down the overdue activities by type (e.g., Calls, Meetings, Emails, Proposals, Demos, WhatsApp
           communications) and lists them alongside the responsible employees. This categorization allows for an easy
@@ -35,7 +36,7 @@ const OverdueActivityReport = () => {
         </p>
       </section>
       <img
-        src="content/pre_pic/Detailed Breakdown.png"
+        src={pic1}
         alt="Detailed Breakdown"
         style={{ width: '850px', marginRight: '10px', marginLeft: '30px' }}
       />

@@ -1,11 +1,12 @@
 import React from 'react';
 import pic from "../../assets/lenskart/lease agreement detail page.png"
+const headingStyle = { color: "#444",  fontWeight: "bold" };
 
 
 const LeaseDetails = () => {
   return (
     <div>
-      <h2>Lease Agreement Detail Page:</h2>
+      <h2  style={headingStyle}>Lease Agreement Detail Page:</h2>
 
       <div className="content-section">
         <p>The system manages Lease Agreements, Payee & Documents, Invoices, Payments, Renewals/Increments, and Adjustments for properties.</p><br />
@@ -15,7 +16,7 @@ const LeaseDetails = () => {
           style={{ width: '800px', marginRight: '10px' }} 
         /><br /><br />
 
-        <b>Property Lease Details:</b><br />
+        <b style={headingStyle}>Property Lease Details:</b><br />
         <br />
         Shows lease agreement details including:<br />
         <ol>

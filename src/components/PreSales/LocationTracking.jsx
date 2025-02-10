@@ -1,13 +1,14 @@
 import React from 'react';
 import  pic from "../../assets/Pre/Employee Location Tracking.png"
 import  pic1 from "../../assets/Pre/-2Employee Location Tracking.png"
+const headingStyle = { color: "#444",  fontWeight: "bold" };
 
 
 
 const LocationTracking = () => {
   return (
     <div id="employee-location-tracking">
-      <h2>Employee Location Tracking:</h2>
+      <h2 style={headingStyle}>Employee Location Tracking:</h2>
       
       <section>
         <p>
@@ -36,7 +37,7 @@ const LocationTracking = () => {
           The system captures the distance travelled for each activity, displayed in the "Distance (Km)" column. At the end of the day, the total distance travelled by the employee can be viewed in the summary report, providing an overview of their movement throughout the day.
         </p>
 
-        <h3>Conclusion</h3>
+        <h3 style={headingStyle}>Conclusion</h3>
         <p>
           The mobile functionality ensures that users can create leads, perform activities, and capture locations seamlessly from their mobile devices. This provides flexibility and convenience, allowing users to manage their tasks efficiently on the go, ensuring that no opportunity is missed and all lead-related activities are accurately recorded, regardless of location. This mobile integration enhances overall productivity and responsiveness in lead management.
         </p>
