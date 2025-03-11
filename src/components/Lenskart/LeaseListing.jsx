@@ -1,9 +1,12 @@
 import React from 'react';
 import  pic from "../../assets/lenskart/lease aggrement listing.png"
-const headingStyle = { color: "#444",  fontWeight: "bold" };
+const headingStyle = { color: "#444",  fontWeight: "bold",  fontFamily: "'Oswald', sans-serif" 
+  };
+const contentStyle = { 
+  
+  fontFamily: "'Oswald', sans-serif", 
 
-
-
+};
 
 const LeaseListing = () => {
   return (
@@ -46,52 +49,60 @@ const LeaseListing = () => {
 
         <b style={headingStyle}>Filters and Search:</b>
         <p>This section empowers users to refine their lease searches for better results.</p>
-        <br />
-        <ul>
+    
+         <ul style={contentStyle}>
           <li>
             <b style={headingStyle}>Lease Date Filter:</b> Users can select a date range to filter leases based on start or end dates. This allows for targeted
             searches, making it easier to manage leases within specific timeframes.
           </li>
+
           <br />
           <li>
             <b style={headingStyle}>State Filter:</b> A dropdown filter that enables users to narrow down leases based on their current state (e.g., active, expired, under review).
             This filter is essential for quick assessments of lease statuses.
           </li>
+
           <br />
           <li>
             <b style={headingStyle}>Search Box:</b> Located prominently within the filter section, this search box allows users to enter keywords to find leases
             quickly. It can search through lease titles, tenant names, and other relevant fields.
           </li>
-          <br />
+
+      
         </ul>
       </div>
       <br />
 
       <div className="content-section">
         <b style={headingStyle}>Lease Listing Table:</b>
-        <p>The heart of the Lease Agreement Listing Page, this table provides a detailed overview of all leases.</p>
+        <p style={contentStyle}>The heart of the Lease Agreement Listing Page, this table provides a detailed overview of all leases.</p>
 
-        <ul>
+         <ul style={contentStyle}>
           <li>
             <b style={headingStyle}>Grid:</b> The grid displays all relevant lease data in a structured format. Each row represents a lease, with columns for key
             information such as tenant name, property address, lease dates, and payment status.
           </li>
-          <br />
+<br/>
+       
           <li>
             <b style={headingStyle}>Action Icons:</b>
-            <ul>
+            <br/>
+             <ul style={contentStyle}>
               <li>
                 <b style={headingStyle}>View (Eye Icon):</b> This icon allows users to access detailed lease information. Clicking it opens a modal or new page
                 where users can view and edit additional details such as payee information, invoices, and renewal options.
               </li>
+
               <br />
               <li>
                 <b style={headingStyle}>Approve (Approval Icon):</b> Positioned near the view icon, this icon facilitates the approval process for leases. A lease
                 can be approved if it has at least one payee and one associated document, ensuring that all necessary information is in place
                 before approval.
               </li>
+
             </ul>
           </li>
+
         </ul>
       </div>
 

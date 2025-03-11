@@ -1,12 +1,18 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
-})
+  plugins: [react()], // <-- Ensure React plugin is included
+  server: {
+    port: 3000, // <-- Change port to 3000
+  },
+});
 
-
+// export default defineConfig({
+//   server: {
+//     port: 3000,
+//   },
+// });
 
 
 const loadContent = (topic) => {

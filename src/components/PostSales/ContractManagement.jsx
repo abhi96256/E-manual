@@ -1,8 +1,14 @@
 import React from 'react';
 import  pic from "../../assets/Post/Service Contract Management.png"
 import  pic1 from "../../assets/Post/Eye Button.png"
-const headingStyle = { color: "#444",  fontWeight: "bold" };
-
+const headingStyle = { color: "#444",  fontWeight: "bold",   fontFamily: "'Oswald', sans-serif" };
+const contentStyle = { 
+  
+   fontFamily: "'Oswald', sans-serif", 
+  fontStyle: "normal", 
+  fontSize: "17px", 
+  lineHeight: "1.6" 
+};
 
 const ContractManagement = () => {
   return (
@@ -19,18 +25,21 @@ const ContractManagement = () => {
        
 
         <h3 style={headingStyle}>Search and Filter</h3>
-        <ul>
+         <ul style={contentStyle}>
           <li>Users can search for service contracts using various filters, such as Contract Type.</li>
+<br/>
           <li>Contract Date, Start Date, and Finish Date.</li>
+<br/>
         </ul>
 
         <h3 style={headingStyle}>Performing Actions on Service Contract:</h3>
         <p>In the Service Management system, users can take various actions on contracts.</p>
 
-        <ul>
+         <ul style={contentStyle}>
           <li>
             <strong style={headingStyle}>Eye Button:</strong> Users can view the details of the service contract, which includes all details such as User Contact Details, Item Details, and Contract Details.
           </li>
+<br/>
         </ul>
 
         <img 

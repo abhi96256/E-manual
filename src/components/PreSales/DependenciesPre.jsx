@@ -1,17 +1,24 @@
 import React from 'react';
-const headingStyle = { color: "#444",  fontWeight: "bold" };
-
+const headingStyle = { color: "#444",  fontWeight: "bold",   fontFamily: "'Oswald', sans-serif" };
+const contentStyle = { 
+  
+   fontFamily: "'Oswald', sans-serif", 
+  fontStyle: "normal", 
+  fontSize: "17px", 
+  lineHeight: "1.6" 
+};
 const Dependencies = () => {
   return (
     <section id="system-dependencies">
       <h2 style={headingStyle}>Dependencies:</h2>
-      <ul>
+       <ul style={contentStyle}>
         <li>
           The system depends on external APIs for location tracking (e.g., Google
           Maps API).
         </li>
-        <br />
+<br/>
         <li>Integration with existing CRM systems is required.</li>
+<br/>
       </ul>
 
       <h2 style={headingStyle}>Success Criteria:</h2>

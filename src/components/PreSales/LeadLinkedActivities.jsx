@@ -1,7 +1,13 @@
 import React from 'react';
 import  pic from "../../assets/Pre/Performing Actions on Lead-Linked Activities.png"
-const headingStyle = { color: "#444",  fontWeight: "bold" };
-
+const headingStyle = { color: "#444",  fontWeight: "bold",   fontFamily: "'Oswald', sans-serif" };
+const contentStyle = { 
+  
+   fontFamily: "'Oswald', sans-serif", 
+  fontStyle: "normal", 
+  fontSize: "17px", 
+  lineHeight: "1.6" 
+};
 
 
 const LeadLinkedActivities = () => {
@@ -22,47 +28,55 @@ const LeadLinkedActivities = () => {
         <h2 style={headingStyle}>Actions on Lead-Linked Activities</h2>
 
         <h3 style={headingStyle}>1. Close</h3>
-        <ul>
+         <ul style={contentStyle}>
           <li>
             <strong style={headingStyle}>Functionality:</strong> Marks the activity as completed. The activity will no longer appear as an open
             task.
           </li>
+<br/>
           <li>
             <strong style={headingStyle}>Use Case:</strong> When the task or interaction with the lead has been successfully concluded.
           </li>
+<br/>
         </ul>
 
         <h3 style={headingStyle}>2. Reschedule</h3>
-        <ul>
+         <ul style={contentStyle}>
           <li>
             <strong style={headingStyle}>Functionality:</strong> Allows the user to change the date and time of the activity to a future point.
           </li>
+<br/>
           <li>
             <strong style={headingStyle}>Use Case:</strong> Useful if the planned activity needs to be postponed due to scheduling conflicts or
             other reasons.
           </li>
+<br/>
         </ul>
 
         <h3 style={headingStyle}>3. Transfer</h3>
-        <ul>
+         <ul style={contentStyle}>
           <li>
             <strong style={headingStyle}>Functionality:</strong> Transfers the responsibility of the activity to another salesperson or team
             member.
           </li>
+<br/>
           <li>
             <strong style={headingStyle}>Use Case:</strong> Needed when the lead is reassigned to a different person or team.
           </li>
+<br/>
         </ul>
 
         <h3 style={headingStyle}>4. Follow Up</h3>
-        <ul>
+         <ul style={contentStyle}>
           <li>
             <strong style={headingStyle}>Functionality:</strong> Sets up a follow-up activity or reminder related to the current activity.
           </li>
+<br/>
           <li>
             <strong style={headingStyle}>Use Case:</strong> Ensures continuity in communication or tasks related to the lead, especially when
             additional actions are required.
           </li>
+<br/>
         </ul>
 
         <p>

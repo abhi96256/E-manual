@@ -7,8 +7,14 @@ import  pic4 from "../../assets/Post/Duplicate Icon.png"
 import  pic5 from "../../assets/Post/Reply Icon.png"
 import  pic6 from "../../assets/Post/Cancel Request Icon.png"
 import  pic7 from "../../assets/Post/Close Request Icon.png"
-const headingStyle = { color: "#444",  fontWeight: "bold" };
-
+const headingStyle = { color: "#444",  fontWeight: "bold",   fontFamily: "'Oswald', sans-serif" };
+const contentStyle = { 
+  
+   fontFamily: "'Oswald', sans-serif", 
+  fontStyle: "normal", 
+  fontSize: "17px", 
+  lineHeight: "1.6" 
+};
 
 
 const ServiceManagement = () => {
@@ -53,20 +59,31 @@ const ServiceManagement = () => {
       </p>
 
       <h3 style={headingStyle}>Filter Options:</h3>
-      <ul>
-        <li><strong style={headingStyle}>Date Filter:</strong> Users can select a range of dates to display service requests created within that time frame.</li><br />
-        <li><strong style={headingStyle}>Ticket No:</strong> Users can search for a ticket by entering the service ticket number.</li><br />
-        <li><strong style={headingStyle}>Mobile No:</strong> Users can search tickets by entering the mobile number associated with the ticket in the search box.</li><br />
-        <li><strong style={headingStyle}>Category Filter:</strong> Users can filter tickets based on the category assigned to them.</li><br />
-        <li><strong style={headingStyle}>Reported Problem:</strong> Users can filter tickets based on the problem assigned to them.</li><br />
-        <li><strong style={headingStyle}>Service Engineer:</strong> Users can filter tickets based on the service engineer assigned to them.</li><br />
+       <ul style={contentStyle}>
+        <li><strong style={headingStyle}>Date Filter:</strong> Users can select a range of dates to display service requests created within that time frame.</li>
+<br/>
+        <li><strong style={headingStyle}>Ticket No:</strong> Users can search for a ticket by entering the service ticket number.</li>
+<br/>
+        <li><strong style={headingStyle}>Mobile No:</strong> Users can search tickets by entering the mobile number associated with the ticket in the search box.</li>
+<br/>
+        <li><strong style={headingStyle}>Category Filter:</strong> Users can filter tickets based on the category assigned to them.</li>
+<br/>
+        <li><strong style={headingStyle}>Reported Problem:</strong> Users can filter tickets based on the problem assigned to them.</li>
+<br/>
+        <li><strong style={headingStyle}>Service Engineer:</strong> Users can filter tickets based on the service engineer assigned to them.</li>
+<br/>
         <li><strong style={headingStyle}>Extra Filter:</strong> Additional filtering options based on specific criteria like service ticket creation time,
-            assign date, resolve date, number, and status of service ticket.</li><br />
-        <li><strong style={headingStyle}>Search Bar:</strong> Allows for quick searching of tickets using keywords (e.g., mobile number, contact name).</li><br />
-        <strong style={headingStyle}><li>Clear All & Search:</li></strong>
-        <ul>
-          <li><strong style={headingStyle}>Clear All:</strong> Resets all filters and shows the full list of service tickets.</li><br />
+            assign date, resolve date, number, and status of service ticket.</li>
+<br/>
+        <li><strong style={headingStyle}>Search Bar:</strong> Allows for quick searching of tickets using keywords (e.g., mobile number, contact name).</li>
+<br/>
+        <strong style={headingStyle}><li>Clear All & Search:</li>
+<br/></strong>
+         <ul style={contentStyle}>
+          <li><strong style={headingStyle}>Clear All:</strong> Resets all filters and shows the full list of service tickets.</li>
+<br/>
           <li><strong style={headingStyle}>Search:</strong> Applies the selected filters to refine the service ticket list.</li>
+<br/>
         </ul>
       </ul>
       

@@ -3,8 +3,14 @@ import  pic from "../../assets/Post/Service Ticket Detail.png"
 import  pic1 from "../../assets/Post/Files upload Icon.png"
 import  pic2 from "../../assets/Post/Items Tab.png"
 import  pic3 from "../../assets/Post/Payment Collection.png"
-const headingStyle = { color: "#444",  fontWeight: "bold" };
-
+const headingStyle = { color: "#444",  fontWeight: "bold",   fontFamily: "'Oswald', sans-serif" };
+const contentStyle = { 
+  
+   fontFamily: "'Oswald', sans-serif", 
+  fontStyle: "normal", 
+  fontSize: "17px", 
+  lineHeight: "1.6" 
+};
 
 
 const TicketDetail = () => {
@@ -51,10 +57,13 @@ const TicketDetail = () => {
       </p>
 
       <h3 style={headingStyle}>UI Elements:</h3>
-      <ul>
-        <li><strong style={headingStyle}>Item:</strong> A dropdown menu to select the item name.</li><br />
-        <li><strong style={headingStyle}>Billing Type:</strong> A dropdown to select the billing type of the item. It can be FOC, PAID, etc.</li><br />
-        <li><strong style={headingStyle}>Quantity:</strong> A text field to enter the quantity of an item. All other text fields will be auto-filled by selecting the price (MRP or DP).</li><br />
+       <ul style={contentStyle}>
+        <li><strong style={headingStyle}>Item:</strong> A dropdown menu to select the item name.</li>
+<br/>
+        <li><strong style={headingStyle}>Billing Type:</strong> A dropdown to select the billing type of the item. It can be FOC, PAID, etc.</li>
+<br/>
+        <li><strong style={headingStyle}>Quantity:</strong> A text field to enter the quantity of an item. All other text fields will be auto-filled by selecting the price (MRP or DP).</li>
+<br/>
       </ul>
 
       <h3 style={headingStyle}>Success Criteria:</h3>

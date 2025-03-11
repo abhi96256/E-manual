@@ -5,8 +5,14 @@ import  pic2 from "../../assets/Post/Actions on Service Ticket(add item).png"
 import  pic3 from "../../assets/Post/Add document.png"
 import  pic4 from "../../assets/Post/Reply.png"
 import  pic5 from "../../assets/Post/Payment Collection-2.png"
-const headingStyle = { color: "#444",  fontWeight: "bold" };
-
+const headingStyle = { color: "#444",  fontWeight: "bold",   fontFamily: "'Oswald', sans-serif" };
+const contentStyle = { 
+  
+   fontFamily: "'Oswald', sans-serif", 
+  fontStyle: "normal", 
+  fontSize: "17px", 
+  lineHeight: "1.6" 
+};
 
 const MobileAccess = () => {
   return (
@@ -36,10 +42,11 @@ const MobileAccess = () => {
 
       <section>
         <h2 style={headingStyle}>Actions on Service Ticket</h2>
-        <ul>
+         <ul style={contentStyle}>
           <li>
             <strong style={headingStyle}>Add Item:</strong> Users can view ticket details and click on ‘+’ button. Add items based on item name, billing type, quantity, with the price automatically calculated and reflected.
           </li>
+<br/>
         </ul>
         <img src={pic2} alt="Actions on Service Ticket(add item)" style={{ width: '300px', marginRight: '10px', marginLeft: '30px' }} />
         <p>
@@ -76,8 +83,9 @@ const MobileAccess = () => {
 
       <section>
         <h2 style={headingStyle}>Payment Collection</h2>
-        <ul>
+         <ul style={contentStyle}>
           <li>Payment can be collected via multiple modes, including cash, UPI, cheque, or partially across these methods.</li>
+<br/>
         </ul>
         <img src={pic5} alt="Payment Collection" style={{ width: '300px', marginRight: '10px', marginLeft: '30px' }} />
         <p>
