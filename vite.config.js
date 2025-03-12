@@ -1,10 +1,12 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  plugins: [react()], // <-- Ensure React plugin is included
+  plugins: [react()],
   server: {
-    port: 3000, // <-- Change port to 3000
+    host: '0.0.0.0', // Ensures Vite binds to all network interfaces
+    port: 3000, // Set the port to 3000
+    strictPort: true, // Ensures Vite fails if port 3000 is unavailable
   },
 });
 
