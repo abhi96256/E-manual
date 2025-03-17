@@ -4,8 +4,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   server: {
-     host: '0.0.0.0',
-    allowedHosts: ["e-manual-2.onrender.com"], // Ensures Vite binds to all network interfaces
+    host: 'localhost', // Bind to localhost
     port: 3000, // Set the port to 3000
     strictPort: true, // Ensures Vite fails if port 3000 is unavailable
   },
