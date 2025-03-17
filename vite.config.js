@@ -4,9 +4,13 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   server: {
-    host: 'localhost', // Bind to localhost
+    host: '0.0.0.0', // Accessible from other devices
     port: 3000, // Set the port to 3000
     strictPort: true, // Ensures Vite fails if port 3000 is unavailable
+    open: true, // Automatically open the app in the browser
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom'], // Ensure React is optimized
   },
 });
 
