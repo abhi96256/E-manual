@@ -4,16 +4,12 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   server: {
-    host: '0.0.0.0', // Accessible from other devices
+    host: '0.0.0.0', // Bind to all network interfaces
     port: 3000, // Set the port to 3000
     strictPort: true, // Ensures Vite fails if port 3000 is unavailable
-    open: true, // Automatically open the app in the browser
-  },
-  optimizeDeps: {
-    include: ['react', 'react-dom'], // Ensure React is optimized
+    allowedHosts: ['e-manual-2.onrender.com'], // Allow requests from this host
   },
 });
-
 // export default defineConfig({
 //   server: {
 //     port: 3000,
